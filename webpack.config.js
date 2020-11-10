@@ -1,5 +1,5 @@
 module.exports = {
-  entry: ["./client/components/map.jsx"],
+  entry: ["./client/index.jsx"],
   output: {
     path: __dirname,
     filename: "./server/public/bundle.js",
@@ -27,4 +27,4 @@ module.exports = {
       },
     ],
   },
-}
+};

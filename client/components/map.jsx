@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
+import { connect } from 'react-redux';
+import { fetchedResorts } from '../redux/resorts';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGptaWxsZXIxNzE3IiwiYSI6ImNrZHFvMHoyMzAwZGwycW54dXN1cTFveW8ifQ.UHW9oi2Z8NPas_liUEiAnw';
 
-class Application extends Component {
+class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,4 +48,12 @@ class Application extends Component {
   }
 }
 
-ReactDOM.render(<Application />, document.getElementById('app'));
+const mapStateToProps = (state) => ({
+  resorts: state.resorts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchedResorts: () => dispatch(fetchedResorts()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

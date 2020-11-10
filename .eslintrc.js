@@ -19,5 +19,6 @@ module.exports = {
   ],
   rules: {
     'no-console': 'off',
+    'react/prefer-stateless-function': 'off',
   },
 };
