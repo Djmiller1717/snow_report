@@ -17,10 +17,8 @@ export const fetchedResorts = () => async (dispatch) => {
 };
 
 export default function resortsReducer(state = [], action) {
-  switch (action.type) {
-    case GET_RESORTS:
-      return action.resorts;
-    default:
-      return state;
+  if (action.type === GET_RESORTS) {
+    state = [...action.resorts];
   }
+  return state;
 }

@@ -17,13 +17,14 @@ class Map extends Component {
 
   componentDidMount() {
     const { lng, lat, zoom } = this.state;
+    const { fetchedResorts } = this.props;
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [lng, lat],
       zoom,
     });
-
+    fetchedResorts();
     map.on('move', () => {
       this.setState({
         lng: map.getCenter().lng.toFixed(4),
@@ -35,6 +36,7 @@ class Map extends Component {
 
   render() {
     const { lng, lat, zoom } = this.state;
+    console.log(this.props.resorts);
     return (
       <div>
         <div className="sidebarStyle">
