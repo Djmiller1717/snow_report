@@ -29,6 +29,7 @@
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "faker": "^5.1.0",
+    "mapbox-gl": "^1.12.0",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.15",
     "pg": "^8.3.3",
@@ -39,6 +40,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^5.1.0",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
@@ -80,5 +82,17 @@
     "wait-for-expect": "^3.0.2",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.7"
+  },
+  "browserslist": {
+    "production": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+    ],
+    "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+    ]
   }
 }
