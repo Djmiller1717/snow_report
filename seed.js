@@ -8,7 +8,7 @@ const resorts = [
   },
   {
     resortName: 'Wildcat Mountain',
-    locatin: [-71.2393, 44.2641],
+    location: [-71.2393, 44.2641],
     state: 'New Hampshire',
   },
   {
@@ -77,3 +77,5 @@ const seed = async () => {
 };
 
 seed();
+
+module.exports = resorts;

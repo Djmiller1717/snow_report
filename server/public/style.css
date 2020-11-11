@@ -18,3 +18,11 @@
   padding: 6px;
   font-weight: bold;
 }
+
+.mapboxgl-marker {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border:1px solid gray;
+  background-color:lightblue;
+}

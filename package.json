@@ -37,6 +37,7 @@
     "react": "^16.13.1",
     "react-confetti": "^6.0.0",
     "react-dom": "^16.13.1",
+    "react-mapbox-gl": "^5.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^5.1.0",
     "react-router-dom": "^5.2.0",
@@ -85,14 +86,14 @@
   },
   "browserslist": {
     "production": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
     "development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
