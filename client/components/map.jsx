@@ -43,15 +43,13 @@ class Map extends Component {
     const { resorts } = this.props;
     if (resorts.length) {
       map.on('load', () => {
-        // let marker = new mapboxgl.Marker()
-        //   .setLngLat([-74, 42.5])
-        //   .addTo(map);
         resorts.forEach((resort) => {
-          let marker = new mapboxgl.Marker()
+          const popup = new mapboxgl.Popup()
+            .setHTML(`<div><h2>${resort.resortName}</h2></div>`);
+          const marker = new mapboxgl.Marker()
             .setLngLat(resort.location)
+            .setPopup(popup)
             .addTo(map);
-        //   console.log(marker);
-        //   return marker;
         });
       });
     }
@@ -63,15 +61,6 @@ class Map extends Component {
           </div>
         </div>
         <div ref={el => this.mapContainer = el} className="mapContainer"></div>
-        {/* <div>
-          {resorts.map((resort) => {
-            return (
-              <Marker coordinates={resort.location} anchor="bottom">
-                <h1>resort</h1>
-              </Marker>
-            );
-          })}
-        </div> */}
       </div>
     );
   }
