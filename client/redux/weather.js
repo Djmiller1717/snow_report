@@ -32,15 +32,15 @@ export const fetchedPreviousWeather = (lat, long) => async (dispatch) => {
     const fourDays = Math.round((new Date().getTime() - 345600000) / 1000);
     const fiveDays = Math.round((new Date().getTime() - 432000000) / 1000);
 
-    const yesterdayInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${yesterday}=${OpenWeatherKey}`);
+    const yesterdayInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${yesterday}&appid=${OpenWeatherKey}`);
 
-    const twoDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${twoDays}=${OpenWeatherKey}`);
+    const twoDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${twoDays}&appid=${OpenWeatherKey}`);
 
-    const threeDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${threeDays}=${OpenWeatherKey}`);
+    const threeDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${threeDays}&appid=${OpenWeatherKey}`);
 
-    const fourDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${fourDays}=${OpenWeatherKey}`);
+    const fourDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${fourDays}&appid=${OpenWeatherKey}`);
 
-    const fiveDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${fiveDays}=${OpenWeatherKey}`);
+    const fiveDaysAgoInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${fiveDays}&appid=${OpenWeatherKey}`);
 
     const previousFiveDates = {
       yesterday: yesterdayInfo.data,

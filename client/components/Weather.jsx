@@ -14,7 +14,7 @@ class Weather extends Component {
     // const resort = resorts.find((r) => r.resortName === this.props.match.params.resortName);
     // console.log(resort);
     fetchedWeather(42.26, -75.5);
-    // fetchedPreviousWeather(42.26, -75.5);
+    fetchedPreviousWeather(42.26, -75.5);
   }
 
   render() {
@@ -24,7 +24,7 @@ class Weather extends Component {
     // const tomorrow = daily[1];
     // const twoDays = daily[2];
     console.log(weather);
-    // console.log(weatherHistory);
+    console.log(weatherHistory);
     if (current && daily !== undefined) {
       return (
         <div>
