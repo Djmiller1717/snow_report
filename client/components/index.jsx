@@ -1,8 +1,8 @@
-/* eslint-disable react/jsx-filename-extension */
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Map from './map';
+import Map from './Map';
+import Weather from './Weather';
 
 class Routes extends Component {
   render() {
@@ -13,6 +13,7 @@ class Routes extends Component {
             <main>
               <Switch>
                 <Route exact path="/" component={Map} />
+                <Route exact path="/:resortName" component={Weather} />
               </Switch>
             </main>
           </div>

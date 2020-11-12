@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'react/prefer-stateless-function': 'off',
+    'react/jsx-one-expression-per-line': 'off',
   },
 };
