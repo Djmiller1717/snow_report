@@ -31,6 +31,7 @@ export const fetchedPreviousWeather = (lat, long) => async (dispatch) => {
     const threeDays = Math.round((new Date().getTime() - 259200000) / 1000);
     const fourDays = Math.round((new Date().getTime() - 345600000) / 1000);
     const fiveDays = Math.round((new Date().getTime() - 432000000) / 1000);
+    // console.log(yesterday);
 
     const yesterdayInfo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${long}&units=imperial&dt=${yesterday}&appid=${OpenWeatherKey}`);
 

@@ -61,6 +61,26 @@ const resorts = [
     location: [-72.6874, 44.4654],
     state: 'Vermont',
   },
+  {
+    resortName: 'Breckenridge Ski Resort',
+    location: [-106.0667, 39.4803],
+    state: 'Colorado',
+  },
+  {
+    resortName: 'Beaver Creek Resort',
+    location: [-106.5167, 39.6043],
+    state: 'Colorado',
+  },
+  {
+    resortName: 'Park City Mountain Resort',
+    location: [-111.5080, 40.6514],
+    state: 'Utah',
+  },
+  {
+    resortName: 'Spirit Mountain',
+    location: [-92.2167, 46.7183],
+    state: 'Minnesota',
+  },
 ];
 
 const seed = async () => {
