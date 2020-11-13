@@ -47,15 +47,25 @@ class Map extends Component {
   }
 
   render() {
-    // const { lng, lat, zoom } = this.state;
-    const { resorts } = this.props;
+    const { lng, lat, zoom } = this.state;
+    const { resorts, history } = this.props;
     if (resorts.length) {
       map.on('load', () => {
         resorts.forEach((resort) => {
-          const popup = new mapboxgl.Popup()
-            .setHTML(`<div>
-                        <h2>${resort.resortName}</h2>
-                      </div>`);
+          const innerHtmlContent = `<div style="min-width: 600px;font-size: large;color : black;">
+            <h4 class="h4Class">${resort.resortName} </h4> </div>`;
+          const divElement = document.createElement('div');
+          const assignBtn = document.createElement('div');
+          assignBtn.innerHTML = '<button class="btn">Weather Details</button>';
+          divElement.innerHTML = innerHtmlContent;
+          divElement.appendChild(assignBtn);
+          assignBtn.addEventListener('click', (e) => {
+            this.seeWeather(resort.resortName);
+          });
+          const popup = new mapboxgl.Popup({
+            offset: 25,
+          })
+            .setDOMContent(divElement);
           const marker = new mapboxgl.Marker()
             .setLngLat(resort.location)
             .setPopup(popup)
@@ -66,8 +76,8 @@ class Map extends Component {
     return (
       <div>
         <div className="sidebarStyle">
-          {/* <div>Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</div> */}
           <div>Snow Report</div>
+          <div>Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</div>
         </div>
         <div ref={el => this.mapContainer = el} className="mapContainer"></div>
       </div>
