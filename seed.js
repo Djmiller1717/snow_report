@@ -98,17 +98,17 @@ const resorts = [
   },
   {
     resortName: 'Heavenly Mountain Resort',
-    location: [119.9399, 38.9353],
+    location: [-119.9399, 38.9353],
     state: 'California',
   },
   {
     resortName: 'Northstar California Resort',
-    location: [120.1211, 39.2746],
+    location: [-120.1211, 39.2746],
     state: 'California',
   },
   {
     resortName: 'Kirkwood Ski Resort',
-    location: [120.0652, 38.6848],
+    location: [-120.0652, 38.6848],
     state: 'California',
   },
   {
@@ -118,7 +118,7 @@ const resorts = [
   },
   {
     resortName: 'Afton Alps Resort',
-    location: [92.7878, 44.8577],
+    location: [-92.7878, 44.8577],
     state: 'Minnesota',
   },
   {
