@@ -82,7 +82,7 @@ class Weather extends PureComponent {
       const tomorrow = daily[0];
       const { oneDay, twoDays, fiveDays } = this.CheckForSnow();
       return (
-        <div>
+        <div className="wholePage">
           <h1 className="title">{selectedResort.resortName}</h1>
           <div>
             <Link to="/">Return To Map</Link>
@@ -91,40 +91,40 @@ class Weather extends PureComponent {
             <div className="column">
               <h3 className="subtitle">Current Weather</h3>
               <div>
-                Conditions: {current.weather[0].description}
+                <span className="weatherLabel">Conditions:</span> {current.weather[0].description}
               </div>
               <div>
-                Temperature: {current.temp} degrees
+                <span className="weatherLabel">Temperature:</span> {current.temp} degrees
               </div>
               <div>
-                Feels Like: {current.feels_like} degrees
+                <span className="weatherLabel">Feels Like:</span> {current.feels_like} degrees
               </div>
               <div>
-                Wind: {current.wind_speed}mph
+                <span className="weatherLabel">Wind:</span> {current.wind_speed}mph
               </div>
             </div>
             <div className="column">
               <h3 className="subtitle is-bold">Tomorrow's Weather</h3>
               <div>
-                Conditions: {tomorrow.weather[0].description}
+                <span className="weatherLabel">Conditions:</span> {tomorrow.weather[0].description}
               </div>
               <div>
-                Temperature:
-                <div>High: {tomorrow.temp.max} degrees</div>
-                <div>Low: {tomorrow.temp.min} degrees</div>
+                <span className="weatherLabel">Temperature:</span>
+                <div><span className="weatherLabel">High:</span> {tomorrow.temp.max} degrees</div>
+                <div><span className="weatherLabel">Low:</span> {tomorrow.temp.min} degrees</div>
               </div>
               <div>
-                Feels Like (midDay): {tomorrow.feels_like.day} degrees
+                <span className="weatherLabel">Feels Like (midDay):</span> {tomorrow.feels_like.day} degrees
               </div>
               <div>
-                Wind: {tomorrow.wind_speed}mph
+                <span className="weatherLabel">Wind:</span> {tomorrow.wind_speed}mph
               </div>
             </div>
             <div className="column">
               <h3 className="subtitle">Has it snowed?</h3>
-              <div>Yesterday? {oneDay ? 'Yes' : 'No'}</div>
-              <div>Two Days Ago? {twoDays ? 'Yes' : 'No'}</div>
-              <div>Five Days Ago? {fiveDays ? 'Yes' : 'No'}</div>
+              <div><span className="weatherLabel">In the past 24 hours?</span> {oneDay ? 'Yes' : 'No'}</div>
+              <div><span className="weatherLabel">In the past 2 days?</span> {twoDays ? 'Yes' : 'No'}</div>
+              <div><span className="weatherLabel">In the past 5 days?</span> {fiveDays ? 'Yes' : 'No'}</div>
             </div>
           </div>
           {/* <div>

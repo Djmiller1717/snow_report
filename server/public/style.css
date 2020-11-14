@@ -27,3 +27,20 @@
   background-color:lightblue;
 }
 
+/* .wholePage {
+  background-color: #4dd2ff;
+  color: #F8F8FF;
+  height: '100vh';
+  min-height: '100vh';
+} */
+
+html, body {
+  background-color: #33ccff;
+  color: #F8F8FF;
+  height: '100vh';
+  min-height: '100vh';
+}
+
+.weatherLabel {
+  color: black
+}
