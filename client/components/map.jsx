@@ -76,7 +76,7 @@ class Map extends Component {
     return (
       <div>
         <div className="sidebarStyle">
-          <div>Snow Report</div>
+          <div>Ski Resort Weather Report</div>
           <div>Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</div>
         </div>
         <div ref={el => this.mapContainer = el} className="mapContainer"></div>

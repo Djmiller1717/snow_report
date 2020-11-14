@@ -8,16 +8,12 @@ class Routes extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <div>
-            <main>
-              <Switch>
-                <Route exact path="/" component={Map} />
-                <Route exact path="/:resortName" component={Weather} />
-              </Switch>
-            </main>
-          </div>
-        </div>
+        <main>
+          <Switch>
+            <Route exact path="/" component={Map} />
+            <Route path="/:resortName" component={Weather} />
+          </Switch>
+        </main>
       </Router>
     );
   }

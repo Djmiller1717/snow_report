@@ -16,11 +16,11 @@ const resorts = [
     location: [-72.0742, 43.3136],
     state: 'New Hampshire',
   },
-  {
-    resortName: 'Jack Frost / Big Boulder',
-    location: [-75.6563, 41.1092],
-    state: 'Pennsylvania',
-  },
+  // {
+  //   resortName: 'Jack Frost/Big Boulder',
+  //   location: [-75.6563, 41.1092],
+  //   state: 'Pennsylvania',
+  // },
   {
     resortName: 'Whitetail Resort',
     location: [-77.9333, 39.7418],

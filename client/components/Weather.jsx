@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchedWeather, fetchedPreviousWeather } from '../redux/weather';
 
-class Weather extends Component {
+class Weather extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,20 +16,32 @@ class Weather extends Component {
   componentDidMount() {
     const { resorts, fetchedWeather, fetchedPreviousWeather } = this.props;
     const resort = resorts.find((r) => r.resortName === this.props.match.params.resortName);
-    this.setState({ selectedResort: resort });
     fetchedWeather(resort.location[1], resort.location[0]);
     fetchedPreviousWeather(resort.location[1], resort.location[0]);
+    this.setState({ selectedResort: resort });
   }
+
+  // componentDidUpdate(prevProps) {
+  //   const { resorts } = this.props;
+  //   const { selectedResort } = this.state;
+  //   if (this.props.match.params.resortName !== prevProps.match.params.resortName) {
+  //     const resort = resorts.find((r) => r.resortName === this.props.match.params.resortName);
+  //     // this.setState({ selectedResort: resort });
+  //     fetchedWeather(resort.location[1], resort.location[0]);
+  //     fetchedPreviousWeather(resort.location[1], resort.location[0]);
+  //     console.log(this.props.weather);
+  //   }
+  // }
 
   CheckForSnow() {
     const { weatherHistory } = this.props;
     const yesterday = weatherHistory.yesterday.current.weather;
     const twoDays = weatherHistory.twoDaysAgo.current.weather;
-    let snow = {
+    const snow = {
       oneDay: false,
       twoDays: false,
       fiveDays: false,
-    }
+    };
     for (let i = 0; i < yesterday.length; i++) {
       if (yesterday[i].main === 'Snow') {
         snow.oneDay = true;
@@ -61,8 +73,8 @@ class Weather extends Component {
     const { selectedResort } = this.state;
     const { weather, weatherHistory, resorts } = this.props;
     const { current, daily } = weather;
-    console.log(selectedResort);
-    console.log(resorts);
+    // console.log(selectedResort);
+    // console.log(resorts);
     // console.log(selectedResort);
     // console.log(weather);
     // console.log(weatherHistory);
@@ -73,7 +85,7 @@ class Weather extends Component {
         <div>
           <h1 className="title">{selectedResort.resortName}</h1>
           <div>
-              <Link to="/">Return To Map</Link>
+            <Link to="/">Return To Map</Link>
           </div>
           <div className="columns">
             <div className="column">
@@ -115,18 +127,18 @@ class Weather extends Component {
               <div>Five Days Ago? {fiveDays ? 'Yes' : 'No'}</div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <h3 className="subtitle">See other resorts in this {selectedResort.state}:</h3>
             <div>
               {resorts.map((resort) => {
-                if (resort.state === selectedResort.state) {
+                if (resort.state === selectedResort.state && resort.resortName !== selectedResort.resortName) {
                   return (
-                    <div><Link to={`/${resort.resortName}`}>{resort.resortName}</Link></div>
+                    <div key={resort.id} onClick={(e)=>this.setState({ selectedResort: resort })}><Link to={`/${resort.resortName}`}>{resort.resortName}</Link></div>
                   );
                 }
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       );
     }
