@@ -90,7 +90,7 @@ class Weather extends Component {
               Conditions: {tomorrow.weather[0].description}
             </div>
             <div>
-              Temperature: High => {tomorrow.temp.max} degrees Low => {tomorrow.temp.min} degrees
+              Temperature: High = {tomorrow.temp.max} degrees Low = {tomorrow.temp.min} degrees
             </div>
             <div>
               Feels Like (midDay): {tomorrow.feels_like.day} degrees
