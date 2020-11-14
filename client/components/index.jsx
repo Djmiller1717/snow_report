@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Map from './Map.jsx';
+import Map from './map.jsx';
 import Weather from './Weather.jsx';
 
 class Routes extends Component {
